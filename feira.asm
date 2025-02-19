@@ -169,7 +169,7 @@ loop_calc:
     lwc1 $f4, total_valor
     add.s $f4, $f4, $f10
     swc1 $f4, total_valor
-    addi $t1, $t1, 1 # Faz recursao e repete o procedimento para processar o proximo item da lista
+    addi $t1, $t1, 1
     j loop_calc
 
 fim_contas:
@@ -299,7 +299,7 @@ imprimir_nome:
     li $v0, 4
     la $a0, proxLinha
     syscall
-    addi $t1, $t1, 1  # Faz recursao e repete o procedimento para imprimir o proximo item na nota
+    addi $t1, $t1, 1 
     j loop_impressao_itens
 
 imprimir_total:
