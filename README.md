@@ -8,6 +8,5 @@ Através desse projeto, foi possível colocar em prática diversos conceitos da 
 - arrays para armazenar dados sobre os produtos
 - operações com pontos flutuantes no cálculo do troco
 - funções, loops e condicionais controlando o fluxo e a lógica do programa
-- caracteres ASCII para organizar as saídas
 
 Além disso, foi possível observar uma aplicação prática criada somente com linguagem MIPS, demonstrando a capacidade do uso desse conteúdo na resolução de problemas.
