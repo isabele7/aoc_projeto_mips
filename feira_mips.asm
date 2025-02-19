@@ -97,7 +97,7 @@ receber_id:
     lw $t2, tam_carrinho
     la $t3, ids_carrinho
     la $t4, qtds_carrinho
-    sll $t5, $t2, 2   # Desloca o valor em $t4 para a esquerda em 2 bits (equivalente a multiplicar por 4). Necessario ara acessar um elemento em um array.
+    sll $t5, $t2, 2   # Desloca o para a esquerda em 2 bits (equivalente a multiplicar por 4). Necessario para acessar um elemento em um array.
     add $t3, $t3, $t5
     add $t4, $t4, $t5
     addi $t0, $t0, -1    # Ajusta os IDs para comecar em zero -> ID = ID - 1
