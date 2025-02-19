@@ -1,7 +1,7 @@
 # Trabalho Parcial de AOC - Projeto em MIPS
 Membros: Isabela Fernanda de Souza Silva e Isabele de Lima Nascimento
 
-Ideia proposta: criar um carrinho de compras simples capaz de processar a compra de diversos itens de feira, calcular o valor da compra com base no preço em kilogramas, calcular o troco (se necessário) e imprimir uma nota fiscal referente à compra.
+Ideia proposta: criar um carrinho de compras simples capaz de processar a compra de diversos itens de feira, calcular o valor da compra com base no preço em quilogramas, calcular o troco (se necessário) e imprimir uma nota fiscal referente à compra.
 
 Através desse projeto, foi possível colocar em prática diversos conceitos da arquitetura MIPS aprendidos durante o semestre. A implementação inclui:
 
