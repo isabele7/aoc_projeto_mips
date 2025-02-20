@@ -97,7 +97,7 @@ receber_id:
     lw $t2, tam_carrinho
     la $t3, ids_carrinho
     la $t4, qtds_carrinho
-    sll $t5, $t2, 2   # Desloca o para a esquerda em 2 bits (equivalente a multiplicar por 4). Necessario para acessar um elemento em um array.
+    sll $t5, $t2, 2   # Desloca para a esquerda em 2 bits (equivalente a multiplicar por 4). Necessario ara acessar um elemento em um array.
     add $t3, $t3, $t5
     add $t4, $t4, $t5
     addi $t0, $t0, -1    # Ajusta os IDs para comecar em zero -> ID = ID - 1
@@ -193,7 +193,13 @@ pagamento_loop:
     c.lt.s $f0, $f2
     bc1t pagamento_erro
     sub.s $f12, $f0, $f2  # Subtrai o valor total pelo valor pago para obter o troco
-    # imprime troco
+    # Arredonda para duas casas decimais
+    l.s $f5, n_100  
+    mul.s $f12, $f12, $f5 
+    round.w.s $f12, $f12
+    cvt.s.w $f12, $f12
+    div.s $f12, $f12, $f5
+    # Imprime troco
     li $v0, 4
     la $a0, troco_msg
     syscall
@@ -287,13 +293,18 @@ imprimir_nome:
     la $a0, real
     syscall
     mul.s $f12, $f12, $f6  # preço por kg * quantidade em kg
+    l.s $f5, n_100  
+    mul.s $f12, $f12, $f5 
+    round.w.s $f12, $f12
+    cvt.s.w $f12, $f12
+    div.s $f12, $f12, $f5
     li $v0, 2
     syscall
     
     li $v0, 4
     la $a0, proxLinha
     syscall
-    addi $t1, $t1, 1  
+    addi $t1, $t1, 1  # Faz recursao e repete o procedimento para imprimir o proximo item na nota
     j loop_impressao_itens
 
 imprimir_total:
